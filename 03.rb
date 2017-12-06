@@ -122,12 +122,6 @@ puts "easy(input): #{easy(input)}"
 
 # Your puzzle input is still 312051.
 
-class Array
-  def sum
-    reduce(&:+)
-  end
-end
-
 class StressTestSwiper < Swiper
   def initialize
     super
