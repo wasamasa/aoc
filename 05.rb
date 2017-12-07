@@ -69,10 +69,8 @@ end
 
 def easy(offsets)
   cpu = StrangeCPU.new(offsets)
-  loop do
-    return cpu.steps if cpu.exit?
-    cpu.step
-  end
+  cpu.step until cpu.exit?
+  cpu.steps
 end
 
 assert(easy(test_input) == 5)
@@ -105,10 +103,8 @@ end
 
 def hard(offsets)
   cpu = StrangerCPU.new(offsets)
-  loop do
-    return cpu.steps if cpu.exit?
-    cpu.step
-  end
+  cpu.step until cpu.exit?
+  cpu.steps
 end
 
 assert(hard(test_input) == 10)

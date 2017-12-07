@@ -70,10 +70,8 @@ class Swiper
 
   def spiral(n)
     iter = spiral_iterator
-    loop do
-      return [@x, @y] if @i == n
-      walk(iter.next)
-    end
+    walk(iter.next) while @i != n
+    [@x, @y]
   end
 end
 
@@ -142,11 +140,8 @@ class StressTestSwiper < Swiper
 
   def spiral(n)
     iter = spiral_iterator
-    loop do
-      value = @seen[[@x, @y]]
-      return value if value > n
-      walk(iter.next)
-    end
+    walk(iter.next) until @seen[[@x, @y]] > n
+    @seen[[@x, @y]]
   end
 end
 

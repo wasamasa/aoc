@@ -89,10 +89,8 @@ end
 
 def easy(banks)
   reallocator = Reallocator.new(banks)
-  loop do
-    return reallocator.steps if reallocator.exit?
-    reallocator.redistribute
-  end
+  reallocator.redistribute until reallocator.exit?
+  reallocator.steps
 end
 
 assert(easy(test_input) == 5)
@@ -113,10 +111,8 @@ puts "easy(input): #{easy(input)}"
 
 def hard(banks)
   reallocator = Reallocator.new(banks)
-  loop do
-    return reallocator.cycle_size if reallocator.exit?
-    reallocator.redistribute
-  end
+  reallocator.redistribute until reallocator.exit?
+  reallocator.cycle_size
 end
 
 assert(hard(test_input) == 4)
