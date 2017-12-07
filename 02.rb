@@ -29,12 +29,6 @@ require_relative 'util'
 #
 # What is the checksum for the spreadsheet in your puzzle input?
 
-class Array
-  def sum
-    reduce(&:+)
-  end
-end
-
 input = File.open('02.txt') do |f|
   f.readlines.map { |row| row.split.map(&:to_i) }
 end
