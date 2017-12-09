@@ -4,6 +4,6 @@ end
 
 class Array
   def sum
-    reduce(&:+)
+    reduce(0, &:+)
   end
 end
