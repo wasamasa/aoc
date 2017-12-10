@@ -52,7 +52,7 @@ class RegisterCPU
   def initialize(instructions)
     @instructions = instructions
     @ip = 0
-    @registers = Hash.new { |k, v| k[v] = 0 }
+    @registers = Hash.new { |h, k| h[k] = 0 }
     @highest = 0
   end
 
