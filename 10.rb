@@ -118,8 +118,10 @@ def easy(size, input)
   hasher.checksum
 end
 
-assert(easy(5, test_input) == 12)
-puts "easy(input): #{easy(256, input)}"
+if __FILE__ == $PROGRAM_NAME
+  assert(easy(5, test_input) == 12)
+  puts "easy(input): #{easy(256, input)}"
+end
 
 # --- Part Two ---
 
@@ -199,9 +201,11 @@ def hard(string)
   hasher.hash
 end
 
-assert(hard('') == 'a2582a3a0e66e6e86e3812dcb672a272')
-assert(hard('AoC 2017') == '33efeb34ea91902bb2f59c9920caa6cd')
-assert(hard('1,2,3') == '3efbe78a8d82f29979031a4aa0b16a9d')
-assert(hard('1,2,4') == '63960835bcdc130f0b66d7ff4f6a5a8e')
+if __FILE__ == $PROGRAM_NAME
+  assert(hard('') == 'a2582a3a0e66e6e86e3812dcb672a272')
+  assert(hard('AoC 2017') == '33efeb34ea91902bb2f59c9920caa6cd')
+  assert(hard('1,2,3') == '3efbe78a8d82f29979031a4aa0b16a9d')
+  assert(hard('1,2,4') == '63960835bcdc130f0b66d7ff4f6a5a8e')
 
-puts("hard(input_string): #{hard(input_string)}")
+  puts("hard(input_string): #{hard(input_string)}")
+end
