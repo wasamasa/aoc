@@ -61,7 +61,7 @@ end
 
 def easy(string)
   sum = 0
-  string.bytes.map(&:chr).each_cons(2) { |x, y| sum += check(x, y) }
+  explode(string).each_cons(2) { |x, y| sum += check(x, y) }
   sum += check(string[-1], string[0])
   sum
 end

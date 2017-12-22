@@ -63,7 +63,7 @@ def knothash(string)
 end
 
 def hash_to_bits(string)
-  string.bytes.map { |b| b.chr.to_i(16).to_s(2).rjust(4, '0') }.join
+  explode(string).map { |c| c.to_i(16).to_s(2).rjust(4, '0') }.join
 end
 
 def grid(keystring)
@@ -116,7 +116,7 @@ class Grid
 
   def initialize(input)
     @grid = input.split.map do |line|
-      line.bytes.map { |byte| byte.chr.to_i }
+      explode(line).map(&:to_i)
     end
   end
 

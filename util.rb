@@ -6,6 +6,7 @@ class Array
   def sum
     reduce(0, &:+)
   end
+end
 
   def xreverse!(from, length)
     to = from + length
@@ -18,4 +19,6 @@ class Array
       self[j] = x
     end
   end
+def explode(string)
+  string.bytes.map(&:chr)
 end

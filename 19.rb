@@ -45,7 +45,7 @@ class TubeRunner
   attr_reader :letters, :steps
 
   def initialize(input)
-    @grid = input.split("\n").map { |line| line.bytes.map(&:chr) }
+    @grid = input.split("\n").map { |line| explode(line) }
     @height = @grid.length
     @width = @grid[0].length
     @letters = []
