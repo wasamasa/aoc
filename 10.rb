@@ -81,6 +81,20 @@ require_relative 'util'
 # input. Once this process is complete, what is the result of
 # multiplying the first two numbers in the list?
 
+class Array
+  def xreverse!(from, length)
+    to = from + length
+    (length / 2).times do |i|
+      j = (to - i - 1) % size
+      i = (from + i) % size
+      x = at(i)
+      y = at(j)
+      self[i] = y
+      self[j] = x
+    end
+  end
+end
+
 class KnotHash
   def initialize(size, lengths)
     @list = (0...size).to_a
