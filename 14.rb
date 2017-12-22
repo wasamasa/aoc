@@ -76,9 +76,9 @@ end
 
 input = 'jxqlasbh'
 
-# assert(hash_to_bits('a0c2017') == '1010000011000010000000010111')
-# assert(easy('flqrgnkx') == 8108)
-# puts "easy(input): #{easy(input)}"
+assert(hash_to_bits('a0c2017') == '1010000011000010000000010111')
+assert(easy('flqrgnkx') == 8108)
+puts "easy(input): #{easy(input)}"
 
 # --- Part Two ---
 
